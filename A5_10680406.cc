@@ -2,19 +2,14 @@
 # include <fstream>
 
 using namespace std;
-
-int main()
-
-{
+// function to ask for the details
 
 struct student {string id; string name; string age; string gender; int score; string grade;};
-
-// ask for the details
-
 student person[5]; // declaration of variable in a array form
-
-
-for (int i=0; i<5; i++)
+void details ()
+{
+// ask for details in a recursive form
+    for (int i=0; i<5; i++)
 {
    cout<<"Enter id number"<<endl;
                    cin>> person[i].id;
@@ -26,14 +21,14 @@ for (int i=0; i<5; i++)
                    cin>> person[i].gender;
    cout      <<"Enter Score"<<endl;
                  cin>> person[i].score;}
+}
+
+ void print()
+ {
 
 
-
-
-
-for (int i = 0; i<5; i++)
-    {
-
+// printing text into a file
+int i;
 
 if (person[i].score<40) person[i].grade = "F"; else if (person[i].score<50) person[i].grade= "E"; else if (person[i].score<60) person[i].grade ="D"; else if (person[i].score<70) person[i].grade ="C"; else if (person[i].score<80) person[i].grade ="B"; else person[i].grade ="A";
 
@@ -54,5 +49,22 @@ output <<"4.       "<<person[3].id<<"             " <<person[3].name<<"         
 output<<"5.       "<<person[4].id<<"             " <<person[4].name<<"          "<<person[4].age<<"     "<<person[4].gender<<"      "<<person[4].score<<"          "<<person[4].grade<<endl;
  output.close();
 }
+
+int main()
+
+{
+
+
+// call function
+     details();
+
+ cin.clear();
+ cin.ignore(0, '\n');
+// re-calling the function again
+ details();
+
+ print();
+
+
 return 0;
 }
