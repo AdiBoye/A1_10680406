@@ -2,11 +2,11 @@
 # include <fstream>
 
 using namespace std;
-// function to ask for the details
+
 
 struct student {string id; string name; string age; string gender; int score; string grade;};
 student person[5]; // declaration of variable in a array form
-void details ()
+void details () // function to ask for the details
 {
 // ask for details in a recursive form
     for (int i=0; i<5; i++)
