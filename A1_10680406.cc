@@ -26,7 +26,7 @@ optumus = false;
 
     }
 
-    if (optimus) cout<< n <<" is a prime number"<<endl;
+    if (optimus == true) cout<< n <<" is a prime number"<<endl;
 
     else cout << n <<" is not a prime number"<<endl;
  
