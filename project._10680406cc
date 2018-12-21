@@ -1,0 +1,48 @@
+# include <iostream>
+# include <fstream>
+# include <iomanip>
+using namespace std;
+int i;
+string a;
+struct person {string name; string registration; string level; string hall; string course;};
+person student[5];
+void print (string name0, string name1,string name2, string name3, string name4,string hall0,string hall1, string hall2, string hall3, string hall4,string course0,string course1, string course2, string course3, string course4,string level0,string level1, string level2, string level3, string level4,string registration0, string registration1, string registration2, string registration3, string registration4);
+void details()
+ {  cout<<"what is your name?"<<endl;
+         cin>>student[i].name;
+cout<<"what hall are you in ?"<<endl;
+          cin>>student[i].hall;
+cout<<"what course do you offer ?"<<endl;
+          cin>>student[i].course;
+cout<<"what level are you now?"<<endl;
+         cin>>student[i].level;
+cout <<"have you registered this semester?"<<endl << "Answer with a yes or no and caps lock should be off"<<endl;
+cin>> a;
+(a =="yes")? student[i].registration ="registered":student[i].registration ="not registered";
+}
+void print (string name0,string name1,string name2, string name3, string name4,string hall0,string hall1, string hall2, string hall3, string hall4,string course0,string course1, string course2, string course3, string course4,string level0,string level1, string level2, string level3, string level4,string registration0, string registration1, string registration2, string registration3, string registration4){
+ofstream output;
+output.open("c:\\users\\adiboye\\documents\\c++\\programming\\slip.txt");
+output<<"         Name             Course              Level             Hall             Registration  "<<endl;
+output<<"==============================================================================================="<<"="<<endl;
+output <<"==== 1."<< name0<<"      "<<course0<<"      "<<level0<<"      "<<hall0<<"      "<<registration0<<"="<<endl;
+output <<"==== 2."<< name1<<"      "<<course1<<"      "<<level1<<"      "<<hall1<<"      "<<registration1<<"="<<endl;
+output <<"==== 3."<< name2<<"      "<<course2<<"      "<<level2<<"      "<<hall2<<"      "<<registration2<<"="<<endl;
+output <<"==== 4."<< name3<<"      "<<course3<<"      "<<level3<<"      "<<hall0<<"      "<<registration3<<"="<<endl;
+output <<"==== 5."<< name4<<"      "<<course4<<"      "<<level4<<"      "<<hall4<<"      "<<registration4<<"="<<endl;
+output <<"==============================================================================================="<<endl;
+output.close();
+};
+// main program
+int main () {
+ while(i<5)
+ {
+     details();
+      i++;
+ }
+print(student[0].name,student[1].name,student[2].name,student[3].name,student[4].name, student[0].hall,student[1].hall,student[2].hall,student[3].hall,student[4].hall, student[0].course,student[1].course,student[2].course,student[3].course,student[4].course, student[0].level,student[1].level,student[2].level,student[3].level,student[4].level, student[0].registration,student[1].registration,student[2].registration,student[3].registration,student[4].registration);
+
+return 0;
+}
+
+
